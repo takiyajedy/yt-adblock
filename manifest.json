@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Blocker TakiyaJedy",
+  "version": "1.0",
+  "description": "Extension untuk block iklan di YouTube.",
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["block.js"]
+    }
+  ]
+}
