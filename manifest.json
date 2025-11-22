@@ -1,12 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Ad Blocker TakiyaJedy",
+  "name": "YouTube Ad Blocker Advanced",
   "version": "1.0",
-  "description": "Extension untuk block iklan di YouTube.",
+  "description": "Mini uBlock Origin untuk block dan skip iklan YouTube.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "*://*.youtube.com/*",
+    "*://*.googlevideo.com/*"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.googlevideo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["block.js"]
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
     }
   ]
 }
